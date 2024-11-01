@@ -6,10 +6,10 @@ char* main_page_items[] = { "encoder", "servo", "pwm", "uart1", "uart2", "uart4"
 uint8_t main_page_items_size = 7;
 
 void main_page_update_lcd(void) {
-    LCD_Fill(0, main_page_last_index * 16, LCD_W, main_page_last_index * 16 + 16, BACKGROUND_COLOR);
-    LCD_ShowString(0, main_page_last_index * 16, main_page_items[main_page_last_index], RED, BACKGROUND_COLOR, 16, 0);
-    LCD_Fill(0, main_page_index * 16, LCD_W, main_page_index * 16 + 16, FOCUS_COLOR);
-    LCD_ShowString(0, main_page_index * 16, main_page_items[main_page_index], RED, FOCUS_COLOR, 16, 0);
+    LCD_Fill(0, main_page_last_index * DEFAULT_FONT_SIZE, LCD_W, main_page_last_index * DEFAULT_FONT_SIZE + DEFAULT_FONT_SIZE, BACKGROUND_COLOR);
+    LCD_ShowString(0, main_page_last_index * DEFAULT_FONT_SIZE, main_page_items[main_page_last_index], RED, BACKGROUND_COLOR, DEFAULT_FONT_SIZE, 0);
+    LCD_Fill(0, main_page_index * DEFAULT_FONT_SIZE, LCD_W, main_page_index * DEFAULT_FONT_SIZE + DEFAULT_FONT_SIZE, FOCUS_COLOR);
+    LCD_ShowString(0, main_page_index * DEFAULT_FONT_SIZE, main_page_items[main_page_index], RED, FOCUS_COLOR, DEFAULT_FONT_SIZE, 0);
 }
 
 void main_page_next(void) {

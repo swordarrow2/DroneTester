@@ -5,10 +5,10 @@ char* _servo = "servo:    ms";
 char* _servo_angle = "angle:      degree";
 
 void servo_update_lcd(void) {
-    LCD_ShowString(0, 40, _servo, RED, BACKGROUND_COLOR, 16, 0);
-    LCD_ShowIntNum(sizeof(_servo) * 16, 40, servo_length, 4, RED, BACKGROUND_COLOR, 16);
-    LCD_ShowString(0, 56, _servo_angle, RED, BACKGROUND_COLOR, 16, 0);
-    LCD_ShowFloatNum1(sizeof(_servo_angle) * 16, 56, (servo_length - 500) * 9.0f / 100, 5, RED, BACKGROUND_COLOR, 16);
+    LCD_ShowString(0, 40, _servo, RED, BACKGROUND_COLOR, DEFAULT_FONT_SIZE, 0);
+    LCD_ShowIntNum(sizeof(_servo) * DEFAULT_FONT_SIZE, 40, servo_length, 4, RED, BACKGROUND_COLOR, DEFAULT_FONT_SIZE);
+    LCD_ShowString(0, 40 + DEFAULT_FONT_SIZE, _servo_angle, RED, BACKGROUND_COLOR, DEFAULT_FONT_SIZE, 0);
+    LCD_ShowFloatNum1(sizeof(_servo_angle) * DEFAULT_FONT_SIZE, 40 + DEFAULT_FONT_SIZE, (servo_length - 500) * 9.0f / 100, 5, RED, BACKGROUND_COLOR, DEFAULT_FONT_SIZE);
 }
 
 void servo_add_length(void) {
@@ -36,7 +36,7 @@ void servo_reset(void) {
 }
 
 void servo_test_init(void) {
-    LCD_Fill(0, 0, LCD_W, LCD_H, BACKGROUND_COLOR);
+    LCD_Fill(0, 0, LCD_W, LCD_H - DEFAULT_FONT_SIZE, BACKGROUND_COLOR);
     encoder_set_on_ccw_listener(servo_sub_length);
     encoder_set_on_cw_listener(servo_add_length);
     encoder_set_on_key_down_listener(servo_reset);

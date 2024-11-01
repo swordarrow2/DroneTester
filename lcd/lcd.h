@@ -46,6 +46,7 @@ void LCD_ShowPicture(uint16_t x, uint16_t y, uint16_t length, uint16_t width, co
 #define LGRAYBLUE        0XA651 //浅灰蓝色(中间层颜色)
 #define LBBLUE           0X2B12 //浅棕蓝色(选择条目的反色)
 
-#define BACKGROUND_COLOR WHITE
-#define FOCUS_COLOR      LIGHTBLUE
+#define BACKGROUND_COLOR    WHITE
+#define FOCUS_COLOR         LIGHTBLUE
+#define DEFAULT_FONT_SIZE   32
 #endif

@@ -22,21 +22,21 @@ void timer0_Init(void)		//1毫秒@42MHz
     ET0 = 1;
 }
 uint16_t ti = 0;
-void show_voltage(void){
-      ADC_CONTR |= 0x43;                      //启动AD转换
+void show_voltage(void) {
+    ADC_CONTR |= 0x43;                      //启动AD转换
     _nop_();
     _nop_();
     while (!(ADC_CONTR & 0x20));            //查询ADC完成标志
     ADC_CONTR &= ~0x20;                     //清完成标志
     //P2 = ADC_RES;                           //读取ADC结果
 
-    LCD_ShowString(0, 304, "voltage:    V", RED, BACKGROUND_COLOR, 16, 0);
-    LCD_ShowFloatNum1(64, 304, ADC_RES * 3.29f / 256 * 2, 3, RED, BACKGROUND_COLOR, 16);
+    LCD_ShowString(0, LCD_H - DEFAULT_FONT_SIZE, "voltage:    V", RED, BACKGROUND_COLOR, DEFAULT_FONT_SIZE, 0);
+    LCD_ShowFloatNum1(64, LCD_H - DEFAULT_FONT_SIZE, ADC_RES * 3.29f / 256 * 2, 3, RED, BACKGROUND_COLOR, DEFAULT_FONT_SIZE);
 // LCD_ShowIntNum(64, 304, ADC_RES, 4, RED, BACKGROUND_COLOR, 16);
 }
 
 void do_0_5_hz(void) {
-  show_voltage();
+    show_voltage();
 }
 
 void do_1_hz(void) {
@@ -129,7 +129,7 @@ int main(void) {
     LCD_Fill(0, 0, LCD_W, LCD_H, BACKGROUND_COLOR);
     LCD_ShowString(48, 96, "welcome to :", RED, BACKGROUND_COLOR, 16, 0);
     LCD_ShowString(48, 112, "SHIT GUI!", YELLOW, BACKGROUND_COLOR, 32, 0);
-  
+
         //   LCD_ShowChinese(0, 0, "中景园电子", RED, FOCUS_COLOR, 32, 0);
         //   LCD_ShowString(0, 40, "encoder:", RED, FOCUS_COLOR, 16, 0);
         //   LCD_ShowIntNum(48, 40, LCD_W, 3, RED, FOCUS_COLOR, 16);
