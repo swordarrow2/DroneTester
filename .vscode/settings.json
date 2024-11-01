@@ -1,0 +1,22 @@
+{
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "files.associations": {
+        "system_config.h": "c",
+        "stc8h.h": "c",
+        "STC8H.H": "cpp",
+        "pic.h": "c",
+        "lcdfont.h": "c",
+        "lcd.h": "c",
+        "lcd_init.h": "c",
+        "system_uart.h": "c",
+        "intrins.h": "c",
+        "encoder.h": "c",
+        "main_page.h": "c",
+        "servo_test.h": "c",
+        "encoder_test.h": "c"
+    },
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 512,
+    "diffEditor.wordWrap": "inherit",
+    "C_Cpp.formatting": "vcFormat"
+}
